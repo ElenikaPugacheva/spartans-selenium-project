@@ -5,9 +5,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.Scanner;
+
 public class CrossBrowsingHandling {
     public static void main(String[] args) {
-        String browserType = "edge";
+
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter your browser - ");
+        scn.next();
+        String browserType = "chrome";
+        // WebDriver interface
         WebDriver driver;
         if(browserType.equals("chrome")){
             driver = new ChromeDriver();
@@ -19,5 +26,8 @@ public class CrossBrowsingHandling {
             throw new RuntimeException("wrong driver");
         }
         driver.get("http://google.com");
+        driver.manage().window().maximize();
+        String title = driver.getTitle();
+        System.out.println(title);
     }
 }
