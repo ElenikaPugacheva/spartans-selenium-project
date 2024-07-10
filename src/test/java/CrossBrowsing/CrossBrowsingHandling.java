@@ -11,9 +11,8 @@ public class CrossBrowsingHandling {
     public static void main(String[] args) {
 
         Scanner scn = new Scanner(System.in);
-        System.out.println("Enter your browser - ");
-        scn.next();
-        String browserType = "chrome";
+        System.out.print("Choose browser chrome, firefox, edge - ");
+        String browserType = scn.next();
         // WebDriver interface
         WebDriver driver;
         if(browserType.equals("chrome")){
@@ -29,5 +28,6 @@ public class CrossBrowsingHandling {
         driver.manage().window().maximize();
         String title = driver.getTitle();
         System.out.println(title);
+        driver.quit();
     }
 }
