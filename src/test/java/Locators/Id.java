@@ -16,7 +16,7 @@ public class Id {
         // find th element
         WebElement searchInputElement = driver.findElement(searchInput);
         // action
-        searchInputElement.sendKeys("tv");
+        searchInputElement.sendKeys("plug");
 
         By searchBtn =By.id("searchBtn");
         WebElement searchBtnElement = driver.findElement(searchBtn);
