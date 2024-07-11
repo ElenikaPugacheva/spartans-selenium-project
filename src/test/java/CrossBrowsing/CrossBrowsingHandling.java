@@ -11,7 +11,7 @@ public class CrossBrowsingHandling {
     public static void main(String[] args) {
 
         Scanner scn = new Scanner(System.in);
-        System.out.print("Choose browser chrome, firefox, edge - ");
+        System.out.print("Choose browser: chrome, firefox, edge - ");
         String browserType = scn.next();
         // WebDriver interface
         WebDriver driver;
