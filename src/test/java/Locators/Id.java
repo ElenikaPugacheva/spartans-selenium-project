@@ -15,9 +15,9 @@ public class Id {
         By searchInput = By.id("searchInput");
         // find th element
         WebElement searchInputElement = driver.findElement(searchInput);
-        // action
+        // action for typing
         searchInputElement.sendKeys("plug");
-
+        // press the button action
         By searchBtn =By.id("searchBtn");
         WebElement searchBtnElement = driver.findElement(searchBtn);
         searchBtnElement.click();
