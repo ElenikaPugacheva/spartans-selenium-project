@@ -21,6 +21,5 @@ public class Id {
         By searchBtn =By.id("searchBtn");
         WebElement searchBtnElement = driver.findElement(searchBtn);
         searchBtnElement.click();
-
     }
 }
