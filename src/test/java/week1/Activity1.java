@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class Activity1 {
     public static void main(String[] args) throws InterruptedException {
@@ -22,18 +26,23 @@ public class Activity1 {
         nameElm.sendKeys("Elena P");
         By email = By.id("emailInput");
         WebElement emailElm = driver.findElement(email);
-        emailElm.sendKeys("elena.pugacheva12345@gmail.com");
+        emailElm.sendKeys("e.puga852@gmail.com");
         By password = By.id("passwordInput");
         WebElement passwordElm = driver.findElement(password);
-        emailElm.sendKeys("123456789Elena#");
+        passwordElm.sendKeys("123456789Elena#");
         By confirmPassword = By.id("confirmPasswordInput");
         WebElement confirmPasswordElm = driver.findElement(confirmPassword);
         confirmPasswordElm.sendKeys("123456789Elena#");
         By signupBtn= By.id("signupBtn");
         WebElement signupBtnElm = driver.findElement(signupBtn);
         signupBtnElm.click();
-
-
-
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement profileImage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("profileImage")));
+        profileImage.isDisplayed();
+        if(profileImage.isDisplayed()){
+            System.out.println("pic is present");
+        }else { System.out.println("pic is not presnt ");
+        }
+        driver.quit();
     }
 }
