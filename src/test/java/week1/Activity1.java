@@ -4,10 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class Activity1 {
     public static void main(String[] args) throws InterruptedException {
@@ -26,7 +22,7 @@ public class Activity1 {
         nameElm.sendKeys("Elena P");
         By email = By.id("emailInput");
         WebElement emailElm = driver.findElement(email);
-        emailElm.sendKeys("e.puga852@gmail.com");
+        emailElm.sendKeys("e.pugach852@gmail.com");
         By password = By.id("passwordInput");
         WebElement passwordElm = driver.findElement(password);
         passwordElm.sendKeys("123456789Elena#");
@@ -36,12 +32,23 @@ public class Activity1 {
         By signupBtn= By.id("signupBtn");
         WebElement signupBtnElm = driver.findElement(signupBtn);
         signupBtnElm.click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        // Teacher way to solve this problem
+        Thread.sleep(20000);
+        By profileImage = By.id("profileImage");
+        WebElement profileImageElm = driver.findElement(profileImage);
+         if(profileImageElm.isDisplayed()){
+            System.out.println("pass");
+        }else {
+             System.out.println("nt pass");
+
+        // My way of code
+
+       /* WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement profileImage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("profileImage")));
         profileImage.isDisplayed();
         if(profileImage.isDisplayed()){
             System.out.println("pic is present");
-        }else { System.out.println("pic is not presnt ");
+        }else { System.out.println("pic is not presnt ");*/
         }
         driver.quit();
     }
