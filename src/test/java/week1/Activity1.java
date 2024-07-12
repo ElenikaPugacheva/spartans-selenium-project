@@ -21,8 +21,15 @@ public class Activity1 {
         WebElement nameElm = driver.findElement(name);
         nameElm.sendKeys("Elena P");
         By email = By.id("emailInput");
+
+        // teacher code for randomise email
+        String emailprefix = "elenaPug";
+        int number = (int) (Math.random()*100);
+        String randomEmail=emailprefix+number+"@gmail.com";
         WebElement emailElm = driver.findElement(email);
-        emailElm.sendKeys("e.pugach852@gmail.com");
+        emailElm.sendKeys(randomEmail);
+        // end point
+
         By password = By.id("passwordInput");
         WebElement passwordElm = driver.findElement(password);
         passwordElm.sendKeys("123456789Elena#");
@@ -32,6 +39,7 @@ public class Activity1 {
         By signupBtn= By.id("signupBtn");
         WebElement signupBtnElm = driver.findElement(signupBtn);
         signupBtnElm.click();
+
         // Teacher way to solve this problem
         Thread.sleep(20000);
         By profileImage = By.id("profileImage");
@@ -40,6 +48,8 @@ public class Activity1 {
             System.out.println("pass");
         }else {
              System.out.println("nt pass");
+        // end point
+
 
         // My way of code
 
