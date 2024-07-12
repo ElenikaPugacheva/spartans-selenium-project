@@ -4,9 +4,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class Activity1 {
     public static void main(String[] args) throws InterruptedException {
+        /*
+        In the Retail app, click on sign in then click on Create new Account,
+        then fill up the form and sign up. Expectation is to Create a new Account.
+        Once an account is created, make sure profile picture is displayed. (isDisplayed)
+        And print result of isDisplayed method.
+        Push to your repository
+        */
         WebDriver driver = new ChromeDriver();
         Thread.sleep(1000);
         driver.manage().window().maximize();
@@ -14,15 +25,18 @@ public class Activity1 {
         By signIn= By.id("signinLink");
         WebElement signInBtn = driver.findElement(signIn);
         signInBtn.click();
+
         By createNewAccount = By.id("newAccountBtn");
         WebElement createNewAccountElm = driver.findElement(createNewAccount);
         createNewAccountElm.click();
+
         By name = By.id("nameInput");
         WebElement nameElm = driver.findElement(name);
         nameElm.sendKeys("Elena P");
+
         By email = By.id("emailInput");
 
-        // teacher code for randomise email
+        // teacher code for randomise email, very useful
         String emailprefix = "elenaPug";
         int number = (int) (Math.random()*100);
         String randomEmail=emailprefix+number+"@gmail.com";
@@ -41,24 +55,24 @@ public class Activity1 {
         signupBtnElm.click();
 
         // Teacher way to solve this problem
-        Thread.sleep(20000);
+
+       /* Thread.sleep(20000);
         By profileImage = By.id("profileImage");
         WebElement profileImageElm = driver.findElement(profileImage);
          if(profileImageElm.isDisplayed()){
             System.out.println("pass");
         }else {
-             System.out.println("nt pass");
+             System.out.println("nt pass");*/
+
         // end point
 
 
         // My way of code
-
-       /* WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement profileImage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("profileImage")));
-        profileImage.isDisplayed();
         if(profileImage.isDisplayed()){
-            System.out.println("pic is present");
-        }else { System.out.println("pic is not presnt ");*/
+            System.out.println("pass");
+        }else { System.out.println("fail");
         }
         driver.quit();
     }
