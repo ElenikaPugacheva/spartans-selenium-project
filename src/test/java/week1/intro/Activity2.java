@@ -1,4 +1,4 @@
-package tek.intro;
+package week1.intro;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 

@@ -1,10 +1,10 @@
-package week1;
+package week1.week1_lab;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Fixing_Jawid_Code {
+public class Fixing_Code {
     public static void main(String[] args) throws InterruptedException {
         /*
         In the Retail app, click on sign in then click on Create new Account,
