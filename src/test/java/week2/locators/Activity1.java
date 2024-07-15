@@ -25,7 +25,6 @@ public class Activity1 {
         nameElm.sendKeys("Elena P");
 
         By email = By.name("email");
-
         String emailprefix = "elnPg";
         int number = (int) (Math.random() * 100);
         String randomEmail = emailprefix + number + "@gmail.com";
