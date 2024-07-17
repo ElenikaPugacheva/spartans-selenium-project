@@ -10,7 +10,7 @@ public class UsingXpathActivity {
         driver.get("https://retail.tekschool-students.com/");
         driver.manage().window().maximize();
         Thread.sleep(2000);
-        By computerNameElm = By.xpath("/html/body/div/div[1]/div[1]/div[3]/div/div[2]/div[1]/div[2]/h1");
+        By computerNameElm = By.xpath("//p[@class='home__category-item-text' and text()='Video Games']");
         String text = driver.findElement(computerNameElm).getText();
         System.out.println(text);
         driver.quit();

@@ -14,5 +14,13 @@ public class AbsoluteXpathPracticeFacebook {
         String text = driver.findElement(facebookSlogan).getText();
         System.out.println(text);
         driver.quit();
+        //tagName[@attribute='value']
+        //input[@id='searchInputId']
+        //input[@type='password']
+        //img[@id= "heroImage"]  -- main image from tekschool
+        //img[@class= 'home__hero-image'] -- main image from tekschool
+        //h1[contains(text(), "Smart")] -- smart home from tekschool
+        //p[@class="Video Games"]
+
     }
 }
