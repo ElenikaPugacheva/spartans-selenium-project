@@ -9,13 +9,16 @@ public class CssLocators {
         driver.manage().window().maximize();
         driver.get("https://retail.tekschool-students.com");
         driver.findElement(By.cssSelector("#signinLink")).click();
-        driver.findElement(By.cssSelector("#email")).sendKeys("elenavin5@gmail.com");
-        driver.findElement(By.cssSelector("#password")).sendKeys("Mona3yo#");
+        driver.findElement(By.cssSelector("input[name='email']")).sendKeys("elenavin5@gmail.com");
+        driver.findElement(By.cssSelector("input[name='password']")).sendKeys("Mona3yo#");
         driver.findElement(By.cssSelector("#loginBtn")).click();
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("#accountLink")).click();
-        String emailAcc = driver.findElement(By.cssSelector("#accountInformation > div.account__information-detail-wrapper > div > h1.account__information-email")).getText();
+        String emailAcc = driver.findElement(By.cssSelector("div.account__information-detail > h1.account__information-email")).getText();
         System.out.println(emailAcc);
         driver.quit();
+    }
+    public By getButtonLocator(String buttonText){
+        return By.xpath("//button[text()] = '"+buttonText+"'");
     }
 }
