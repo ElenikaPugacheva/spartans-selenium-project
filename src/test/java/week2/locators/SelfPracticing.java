@@ -11,15 +11,26 @@ public class SelfPracticing {
         WebDriver driver = new ChromeDriver();
         driver.get("https://fireflyworlds.com/categories/all-games/");
         driver.manage().window().maximize();
-         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-           wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"post-9892\"]/div/div[2]/div/a")));
-        driver.findElement(By.cssSelector("#post-9892 > div > div.menu-content-pro > div > div > a:nth-child(3) > div")).click();
-           WebElement mainLogo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#main-logo > img")));
-           if(mainLogo.isDisplayed()){
+
+        driver.findElement(By.xpath("//h3[text()='Stronghold: Definitive Edition']/following-sibling::a[2]")).click();
+           ////h3[text()='Stronghold: Definitive Edition']/following-sibling::a[2]
+        driver.findElement(By.cssSelector("#main-logo > img"));
+
+           /*if(mainLogo.isDisplayed()){
                System.out.println("Pass");
            }else {
                System.out.println("Fail");
            }
+           WebDriver webDriver = new ChromeDriver();
+           webDriver.manage().window().maximize();
+           webDriver.get("https://retail.tekschool-students.com/");
+
+           webDriver.findElement(By.xpath("//*[@id=\"home\"]")).click();
+           Thread.sleep(2000);
+           webDriver.findElement(By.xpath("//*[@id=\"home\"]/div[2]/div[1]/div[1]/div/div/div[2]/img")).click();
+           Thread.sleep(2000);
+           webDriver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[1]/div[3]/div/div[1]/img")).click();
+           */
         driver.quit();
     }
 }

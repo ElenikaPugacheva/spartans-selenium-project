@@ -8,19 +8,21 @@ public class PS5Activity {
         driver.manage().window().maximize();
         driver.get("https://retail.tekschool-students.com/");
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         By videoGames = By.xpath("//img[@alt='Video Games']");
         driver.findElement(videoGames).click();
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         By ps5 = By.xpath("//img[@alt='PlayStation 5 Console']");
         driver.findElement(ps5).click();
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         By addToCart = By.xpath("//button[@id='addToCartBtn']");
         driver.findElement(addToCart).click();
 
         driver.quit();
+
+
 
 
 
