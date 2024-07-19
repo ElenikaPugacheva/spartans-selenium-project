@@ -15,7 +15,7 @@ public class UploadPhoneNumberProfile {
 
         driver.findElement(By.cssSelector("#signinLink")).click();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         WebElement emailInp = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("login__input")));
         emailInp.sendKeys("elenavin5@gmail.com");
@@ -34,11 +34,12 @@ public class UploadPhoneNumberProfile {
 
         driver.findElement(By.xpath("//button[@id=\"personalUpdateBtn\"]")).click();
 
-        WebElement successUpdateMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'Toastify__toast-body')]//div[text()='Personal Information Updated Successfully']\n")));
+        WebElement successUpdateMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'Toastify__toast-body')]/div[text()='Personal Information Updated Successfully']")));
         System.out.println(successUpdateMsg.getText());
 
 
         driver.quit();
+
 
 
 
