@@ -1,4 +1,4 @@
-package week3;
+package week3.day_1;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import java.time.Duration;
+import java.util.List;
+
 public class Activity1 {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
@@ -20,7 +22,11 @@ public class Activity1 {
         Thread.sleep(1000);
         WebElement languageElm = driver.findElement(By.id("languageSelect"));
         Select languageSelect = new Select(languageElm);
-        languageSelect.selectByValue("Italian");
+        List<WebElement> options= languageSelect.getOptions();
+        int size = options.size();
+        languageSelect.selectByIndex(size-1);
+        //languageSelect.selectByValue("Italian");
+
 
 
     }
