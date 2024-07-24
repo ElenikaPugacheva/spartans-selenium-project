@@ -23,7 +23,7 @@ username: supervisor
         driver.findElement(By.linkText("Login")).click();
         driver.findElement(By.name("username")).sendKeys("supervisor");
         driver.findElement(By.name("password")).sendKeys("tek_supervisor");
-        driver.findElement(By.linkText("Sign In")).click();
+        driver.findElement(By.xpath("//button[text()='Sign In']")).click();
         driver.findElement(By.linkText("Plans")).click();
         WebElement motoelm = driver.findElement(By.xpath("//table/tbody/tr[1]/td[3]"));//Motorcycle
         String motValue = motoelm.getText();
